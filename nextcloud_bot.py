@@ -4,16 +4,14 @@ import requests
 from datetime import datetime
 import logging
 
-# Налаштування логування
 logging.basicConfig(filename="webhook.log", level=logging.INFO, format="%(asctime)s - %(message)s")
 
-# Створення FastAPI-додатка
 app = FastAPI()
 
 class NextcloudTalkBot:
     def __init__(self, base_url, username, password):
-        self.base_url = base_url
-        self.auth = ("Basic", (username, password))
+        self.base_url = base_url.rstrip("/")  # Видаляємо кінцевий слеш
+        self.auth = (username, password)  # Basic Auth без "Basic"
 
     def send_message(self, room_id: str, message: str) -> bool:
         url = f"{self.base_url}/ocs/v2.php/apps/spreed/api/v1/chat/{room_id}"
@@ -41,12 +39,12 @@ class NextcloudTalkBot:
             return "Я бот, створений для практики в Таскомбанку. Версія 0.1."
         return None
 
+# Облікові дані
 BASE_URL = "https://cloud.tascombank.ua"
 USERNAME = "usr-stud117"
 PASSWORD = "ibRrg-LiQAy-qdKWq-njzEc-nZimp"
 
-# Ініціалізація бота (розкоментуй після введення даних)
-# bot = None
+# Ініціалізація бота
 bot = NextcloudTalkBot(BASE_URL, USERNAME, PASSWORD)
 
 class WebhookMessage(BaseModel):
@@ -58,9 +56,10 @@ class WebhookMessage(BaseModel):
 async def handle_webhook(data: WebhookMessage):
     logging.info(f"Отримано: message={data.message}, roomId={data.roomId}, token={data.token}")
     print(f"Отримано: message={data.message}, roomId={data.roomId}, token={data.token}")
+    # Використовуємо token замість roomId для Nextcloud Talk
+    room_id = data.token if data.token else data.roomId
     if bot:
         message = data.message
-        room_id = data.roomId
         if message.startswith("/"):
             response = bot.process_command(message)
             if response:
