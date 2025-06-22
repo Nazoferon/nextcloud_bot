@@ -41,13 +41,13 @@ class NextcloudTalkBot:
             return "Я бот, створений для практики в Таскомбанку. Версія 0.1."
         return None
 
-# Тимчасові заглушки (заміни після отримання облікового запису)
-BASE_URL = "https://<your-nextcloud-instance>/"
-USERNAME = "<your-username>"
-PASSWORD = "<your-password>"
+BASE_URL = "https://cloud.tascombank.ua"
+USERNAME = "usr-stud117"
+PASSWORD = "fWCiQ-r8AEz-xARoP-aTyER-6jBRo"
 
 # Ініціалізація бота (розкоментуй після введення даних)
-bot = None  # bot = NextcloudTalkBot(BASE_URL, USERNAME, PASSWORD)
+# bot = None
+bot = NextcloudTalkBot(BASE_URL, USERNAME, PASSWORD)
 
 class WebhookMessage(BaseModel):
     message: str
