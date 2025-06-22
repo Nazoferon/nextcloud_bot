@@ -24,8 +24,8 @@ class NextcloudTalkBot:
             logging.info(f"Повідомлення відправлено: {message}")
             print(f"Повідомлення відправлено: {message}")
             return True
-        logging.error(f"Помилка відправлення: {response.status_code}")
-        print(f"Помилка відправлення: {response.status_code}")
+        logging.error(f"Помилка відправлення: {response.status_code}, текст: {response.text}")
+        print(f"Помилка відправлення: {response.status_code}, текст: {response.text}")
         return False
 
     def process_command(self, message: str) -> str:
@@ -43,7 +43,7 @@ class NextcloudTalkBot:
 
 BASE_URL = "https://cloud.tascombank.ua"
 USERNAME = "usr-stud117"
-PASSWORD = "fWCiQ-r8AEz-xARoP-aTyER-6jBRo"
+PASSWORD = "ibRrg-LiQAy-qdKWq-njzEc-nZimp"
 
 # Ініціалізація бота (розкоментуй після введення даних)
 # bot = None
