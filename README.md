@@ -3,11 +3,6 @@
 
 This project is a Python-based bot designed to interact with Nextcloud, a popular cloud storage platform. The bot aims to simplify user interactions with Nextcloud, providing an intuitive interface for managing files, sharing data, and collaborating with others. ✨
 
-## Project Purpose and Background
-------------------------------------------------
-
-The nextcloud_bot was created to address the need for a user-friendly interface to Nextcloud. The project targets anyone looking for a straightforward way to manage their files, collaborate with others, or integrate Nextcloud with other services. 🤝
-
 ## Features and Functionality
 ------------------------------------------------
 
