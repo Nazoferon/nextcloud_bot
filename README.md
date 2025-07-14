@@ -33,29 +33,12 @@ To get started with nextcloud_bot, you'll need to:
 4. Set up your Nextcloud API credentials 🔒
 5. Run the bot using the provided script 💻
 
-## Usage Examples
-------------------------------------------------
-
-1. List available commands: `bot help` 💡
-2. Create a new file: `bot create file.txt` 📝
-3. Share a file: `bot share file.txt [username]` 📁
-
 ## Project Structure
 ------------------------------------------------
 
 The project structure is as follows:
 
 * `nextcloud_bot.py`: The main bot script 📄
-* `config.py`: Configuration files for Nextcloud API credentials 🔒
-* `tests`: Example tests for the bot ⚡️
-
-## Contributing Guidelines
-------------------------------------------------
-
-1. Fork this repository ⎈
-2. Create a new branch for your changes 🌟
-3. Commit changes with meaningful commit messages 💬
-4. Open a pull request to merge your changes 🔓
 
 ## License Information
 ------------------------------------------------
